@@ -1,7 +1,7 @@
 /**
- * Minimal front-end behaviour for the Tellus static site.
- * Consolidates the original WordPress/Elementor scripts into a
- * lightweight bundle that keeps the essential interactions running locally.
+ * Comportamiento frontal simplificado para el sitio estático de Tellus Consultoría.
+ * Consolida los scripts originales de WordPress/Elementor en un paquete ligero
+ * que mantiene las interacciones esenciales funcionando de forma local.
  */
 (function () {
   "use strict";
@@ -22,7 +22,7 @@
     try {
       return JSON.parse(value);
     } catch (error) {
-      console.warn("Unable to parse JSON configuration", error);
+      console.warn("No fue posible interpretar la configuración JSON", error);
       return {};
     }
   };

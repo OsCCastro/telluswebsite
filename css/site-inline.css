@@ -1,11 +1,11 @@
-/* Inline styles extracted from index.html */
+/* Estilos inline extraídos desde index.html */
 
-/* WordPress image intrinsic size support */
+/* Compatibilidad con tamaños intrínsecos de imágenes de WordPress */
 img:is([sizes="auto" i], [sizes^="auto," i]) {
   contain-intrinsic-size: 3000px 1500px;
 }
 
-/* Emoji styling */
+/* Estilos para emojis */
 img.wp-smiley,
 img.emoji {
   display: inline !important;
@@ -19,7 +19,7 @@ img.emoji {
   padding: 0 !important;
 }
 
-/* Classic theme default styles */
+/* Estilos predeterminados del tema clásico */
 .wp-block-button__link {
   color: #fff;
   background-color: #32373c;
@@ -36,7 +36,7 @@ img.emoji {
   text-decoration: none;
 }
 
-/* Global block styles */
+/* Estilos globales de bloques */
 :root {
   --wp--preset--aspect-ratio--square: 1;
   --wp--preset--aspect-ratio--4-3: 4/3;
