@@ -1,3 +1,17 @@
+/* === DEBUG LAYOUT (activar con .debug en <html> o <body>) === */
+.debug * { outline: 1px dashed rgba(0,0,0,.25); outline-offset: -1px; }
+
+/* Resalta contenedores clave (Bootstrap) */
+.debug .container { outline: 2px solid #0d6efd; }
+.debug .row       { outline: 2px dashed #0d6efd; }
+.debug [class*="col-"] { outline: 2px solid #198754; }
+
+/* Semánticos */
+.debug header, .debug nav, .debug main, .debug section, .debug aside, .debug footer {
+  outline: 2px solid #ff5722;
+}
+
+
 /* 1) Carga Montserrat (Google Fonts) */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
@@ -14,6 +28,16 @@ html, body { font-family: var(--font-sans); }
     color:#ffffff;
     font-size: 24px;
     transition: 0.3s color;
+}
+
+.button_1 {
+    background-color: #009970;
+    color:#ffffff;
+    font-size: 20px;
+    padding: 20px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
 }
 
 .contact-button {
@@ -92,7 +116,7 @@ html, body { font-family: var(--font-sans); }
 
 .hero-section {
   position: relative;
-  background: url(/img/conver_plants.jpg) center/cover no-repeat;
+  background: url('../img/conver_plants.jpg') center/cover no-repeat;
   min-height: 100vh;
   width: 100%;
 }
@@ -109,4 +133,77 @@ html, body { font-family: var(--font-sans); }
   min-height: 100vh;
   position: relative;
   z-index: 1;
+}
+
+.offcanvas { background-color: #fff; }
+
+.offcanvas .nav-link { 
+  color: #212529;   /* gris/negro Bootstrap */
+}
+
+.offcanvas .nav-link:hover,
+.offcanvas .nav-link.active {
+  color: #009970;   /* tu verde */
+}
+
+/* (opcional) limita los links blancos solo a desktop */
+@media (min-width: 992px) {
+  .navbar .nav-link { color: #fff; }
+}
+
+
+/* Hero: overlay y degradado al siguiente fondo */
+.hero-section {
+  position: relative;
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  text-align: center;
+  background:
+    linear-gradient(0deg, rgba(0,0,0,.35), rgba(0,0,0,.35)),
+    url('../img/conver_plants.jpg') center/cover no-repeat; /* ojo: ruta relativa */
+}
+.hero-fade{
+  content:"";
+  position:absolute; left:0; right:0; bottom:-1px; height:120px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), #f8f9fa);
+}
+
+/* Estrellas (si usas texto, ajústalas visualmente) */
+[aria-label^="Calificación"] { letter-spacing: 2px; font-size: 18px; }
+
+/* Navbar transparente sobre hero (que ya planteaste) */
+.navbar { background: transparent; transition: background .2s; }
+.navbar.scrolled { background: rgba(0,0,0,.5); backdrop-filter: blur(4px); }
+
+
+/* ...existing code... */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #f8f9fa;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-band {
+  background: #f8f9fa;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
